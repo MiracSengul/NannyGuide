@@ -1,12 +1,21 @@
 {
-  "name": "nannyguide",
+  "name": "backend-test",
   "version": "1.0.0",
-  "description": "description",
+  "description": "",
+  "type":"module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src/**/*.js",
+    "start": "node ./src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "Mirac_Sengul <>",
-  "license": "ISC"
+  "author": "Mirac_Sengul <mirac.ssengul@hotmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
+    "nodemon": "^3.1.14"
+  }
 }
