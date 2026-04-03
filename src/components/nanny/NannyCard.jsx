@@ -44,22 +44,22 @@ const NannyCard = ({ nanny }) => {
       <div className={styles.card}>
         <img src={nanny.avatar_url} width={96} height={96} alt={nanny.name} />
         <div className={styles.cardItem}>
-          <ul className={styles.info}>
-            <li>
-              <img src={mapPin} alt="location" />
-              {nanny.location}
-            </li>
-            <li>
-              <img src={starIcon} alt="rating" />
-              {nanny.rating}
-            </li>
-            <li>Price / 1 hour: {nanny.price_per_hour}$</li>
-            <li>
-              <button className={styles.heartBtn} onClick={handleFavoriteClick}>
-                {isFav ? '♥' : '♡'}
-              </button>
-            </li>
-          </ul>
+        <ul className={styles.info}>
+          <li>
+            <img src={mapPin} alt="location" />
+            {nanny.location}
+          </li>
+          <li>
+            <img src={starIcon} alt="rating" />
+            <span>Rating: {nanny.rating}</span>
+          </li>
+          <li>Price / 1 hour: {nanny.price_per_hour}$</li>
+          <li>
+            <button className={styles.heartBtn} onClick={handleFavoriteClick}>
+              {isFav ? '♥' : '♡'}
+            </button>
+          </li>
+        </ul>
           <div className={styles.cardinfo}>
             <h2 className={styles.heading}>{nanny.name}</h2>
             <ul className={styles.all}>
@@ -113,10 +113,10 @@ const NannyCard = ({ nanny }) => {
         </div>
       </div>
 
-      <AppointmentModal
-        isOpen={showAppointment}
-        onClose={() => setShowAppointment(false)}
-        nannyName={nanny.name}
+      <AppointmentModal 
+        isOpen={showAppointment} 
+        onClose={() => setShowAppointment(false)} 
+        nanny={nanny}   // tüm nanny objesini gönder
       />
       <LoginModal isOpen={showLogin} onClose={() => setShowLogin(false)} />
     </>

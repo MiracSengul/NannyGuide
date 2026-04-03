@@ -1,226 +1,226 @@
-/* Header ana konteyner */
 .header {
-    position: relative;
-    z-index: 100;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    width: 100%;
-  }
-  
-  .headerContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #111;
-  }
-  
-  /* Desktop navbar */
-  .navbar {
-    display: flex;
-    gap: 100px;
-    align-items: center;
-  }
-  
-  .navbar ul {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navbar ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    transition: opacity 0.2s;
-  }
-  
-  .navbar ul li a:hover {
-    opacity: 0.7;
-  }
-  
-  .userEmail {
-    font-size: 0.9rem;
-    color: #333;
-    margin: 0;
-  }
-  
-  .login {
-    padding: 10px 24px;
-    color: #F03F3B;
-    border: 1.5px solid #F03F3B;
-    border-radius: 40px;
-    cursor: pointer;
-    background: transparent;
-    white-space: nowrap;
-    font-family: inherit;
-    font-weight: 600;
-    transition: all 0.2s;
-  }
-  
-  .login:hover {
-    background: #F03F3B;
-    color: white;
-  }
-  
-  .register {
-    padding: 10px 24px;
-    background-color: #F03F3B;
-    border: none;
-    border-radius: 40px;
-    color: white;
-    cursor: pointer;
-    white-space: nowrap;
-    font-family: inherit;
-    font-weight: 600;
-    transition: background 0.2s;
-  }
-  
-  .register:hover {
-    background-color: #0a46a0;
-  }
-  
-  /* Hamburger butonu (mobil) */
-  .hamburger {
+  background-color: #F03F3B;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  position: relative; /* nokta için gerekli */
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; /* noktanın yazının altında konumu */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.userArea {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userName {
+  color: white;
+  font-weight: 500;
+}
+
+.logoutBtn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.logoutBtn:hover {
+  background: white;
+  color: #F03F3B;
+}
+
+.loginBtn, .registerBtn {
+  padding: 6px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.loginBtn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.loginBtn:hover {
+  background: white;
+  color: #F03F3B;
+}
+
+.registerBtn {
+  background: white;
+  border: none;
+  color: #F03F3B;
+  font-weight: 600;
+}
+
+.registerBtn:hover {
+  background: #f0f0f0;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Overlay ve Drawer */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: white;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerClose {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.drawerLogo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1.2rem 0 1.8rem;
+  text-decoration: none;
+  color: #111;
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.drawerNav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.drawerActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.drawerActions .loginBtn,
+.drawerActions .registerBtn,
+.drawerActions .logoutBtn {
+  width: 100%;
+  text-align: center;
+}
+
+.drawerUserName {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar, .userArea {
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 1.5px solid #ccc;
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 8px;
   }
-  
-  .hamburger span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: #111;
-    border-radius: 2px;
-    transition: background 0.2s;
-  }
-  
-  .hamburger:hover span {
-    background: #F03F3B;
-  }
-  
-  /* Overlay */
-  .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 100;
-    animation: fadeIn 0.2s ease;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  /* Drawer (sağ menü) */
-  .drawer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100vh;
-    background: #fff;
-    z-index: 101;
+  .hamburger {
     display: flex;
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
-    transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
-  .drawerOpen {
-    transform: translateX(0);
+  .headerContainer {
+    padding: 0.8rem 1rem;
   }
-  
-  .drawerClose {
-    align-self: flex-end;
-    background: transparent;
-    border: none;
-    font-size: 1.25rem;
-    cursor: pointer;
-    color: #555;
-    line-height: 1;
-    padding: 4px 8px;
-    border-radius: 6px;
-  }
-  
-  .drawerClose:hover {
-    background: #f3f4f6;
-  }
-  
-  .drawerLogo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 1.2rem 0 1.8rem;
-  }
-  
-  .drawerNav {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .drawerNav a {
-    text-decoration: none;
-    color: #111;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #f0f0f0;
-  }
-  
-  .drawerActions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: auto;
-  }
-  
-  .drawerActions .login,
-  .drawerActions .register {
-    width: 100%;
-    padding: 12px 20px;
-    text-align: center;
-  }
-  
-  .drawerUsername {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .navbar {
-      display: none;
-    }
-    .hamburger {
-      display: flex;
-    }
-    .headerContainer {
-      padding: 0.8rem 1rem;
-    }
-  }
+}

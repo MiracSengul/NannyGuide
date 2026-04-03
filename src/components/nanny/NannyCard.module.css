@@ -25,23 +25,44 @@
   width: 100%;
 }
 
-.card .cardItem .info {
+.info {
   display: flex;
   position: absolute;
   right: 0;
   top: 10px;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 10px;
+  align-items: center;
 }
 
-.card .cardItem .info li {
+.info li {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  font-size: 0.9rem;
+  gap: 6px;
+  font-size: 0.85rem;
+  padding-right: 12px;
+  border-right: 1px solid #e2e8f0;
+  line-height: 1;
 }
 
+.info li:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* Kalp butonu için ekstra */
+.heartBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 0;
+  color: #E44848;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
 .card .cardItem .item li:first-child {
   margin-bottom: 25px;
 }
@@ -93,16 +114,6 @@
 
 .color {
   color: #C4CCCB;
-}
-
-.heartBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
-  padding: 0;
-  transition: color 0.2s ease;
-  color: #E44848;
 }
 
 .heartBtn:hover {
