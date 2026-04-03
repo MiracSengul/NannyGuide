@@ -1,0 +1,86 @@
+.filtersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-end;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterGroup label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.select {
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  background: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.priceButtons, .popularityButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.priceBtn, .popularBtn {
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  background: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.priceBtn.active, .popularBtn.active {
+  background: #F03F3B;
+  border-color: #F03F3B;
+  color: white;
+}
+
+.priceBtn:hover, .popularBtn:hover {
+  border-color: #F03F3B;
+}
+
+.showAllBtn {
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid #F03F3B;
+  border-radius: 30px;
+  color: #F03F3B;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: auto;
+}
+
+.showAllBtn:hover {
+  background: #F03F3B;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .filtersContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .showAllBtn {
+    margin-left: 0;
+  }
+}

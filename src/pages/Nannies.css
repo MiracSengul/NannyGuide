@@ -1,0 +1,46 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+select {
+  margin-bottom: 2rem;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  background: white;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.load-more-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 12px 32px;
+  background: #F03F3B;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.load-more-btn:hover {
+  background: #d32f2f;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}
