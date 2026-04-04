@@ -16,10 +16,7 @@ const Nannies = () => {
   useEffect(() => {
     const fetchNannies = async () => {
       try {
-        // Kullanıcı oturumunu kontrol et (opsiyonel, ama kurallar izin veriyor)
         const user = auth.currentUser;
-        console.log('Kullanıcı UID:', user ? user.uid : 'Oturum açılmamış');
-        
         const snapshot = await get(nanniesRef());
         if (snapshot.exists()) {
           const data = snapshot.val();
